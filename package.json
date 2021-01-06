@@ -1,21 +1,24 @@
 {
-  "name": "vue-ele-upload-video",
-  "description": "vue-ele-upload-video 对 element-ui 中 upload 组件进一步封装，使得视频上传更加容易",
-  "version": "2.0.6",
+  "name": "vue-yd-upload-video",
+  "description": "对 element-ui 中 upload 组件进一步封装，使得视频上传更加容易",
+  "version": "2.1.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue build -t lib --name vue-ele-upload-video -d ./dist/ ./lib/index.js",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name vue-yd-upload-video --dest ./dist/ ./lib/index.js",
+    "lint": "vue-cli-service lint",
+    "release": "standard-version",
+    "pub": "npm run build:lib && npm run release &&  npm publish --registry https://registry.npmjs.org && git push --follow-tags origin develop"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dream2023/vue-ele-upload-video"
+    "url": "https://github.com/huashizhong-hub/vue-ele-upload-video.git"
   },
   "main": "lib/index.js",
-  "homepage": "https://github.com/dream2023/vue-ele-upload-video/",
+  "homepage": "https://github.com/huashizhong-hub/vue-ele-upload-video",
   "keywords": [
-    "vue-ele-upload-video",
+    "vue-yd-upload-video",
     "vue",
     "vue video",
     "element",
@@ -29,11 +32,13 @@
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
+    "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "core-js": "^2.6.5",
     "element-ui": "^2.9.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "standard-version": "^7.0.0",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
